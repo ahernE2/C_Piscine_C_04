@@ -6,7 +6,7 @@
 /*   By: alejhern <alejhern@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 11:03:29 by alejhern          #+#    #+#             */
-/*   Updated: 2024/04/04 13:59:11 by alejhern         ###   ########.fr       */
+/*   Updated: 2024/04/04 20:13:08 by alejhern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,14 @@ int	check_base(char *base, int base_len)
 	return (1);
 }
 
-void	ft_print_putnbr_base(int nbr, char *base, int base_len)
-{
+void	ft_print_putnbr_base(long nbr, char *base, int base_len)
+{	
 	if (nbr < 0)
 	{
-		if (nbr < -2147483647)
-			ft_print_putnbr_base(-2147483647, base, base_len);
-		else
-		{
-			ft_putchar('-');
-			nbr = -nbr;
-		}
+		ft_putchar('-');
+		nbr = nbr * -1;
 	}
-	if (nbr > base_len)
+	if (nbr >= base_len)
 		ft_print_putnbr_base(nbr / base_len, base, base_len);
 	ft_putchar(base[nbr % base_len]);
 }
@@ -74,5 +69,5 @@ void	ft_putnbr_base(int nbr, char *base)
 
 	base_len = ft_strlen(base);
 	if (check_base(base, base_len))
-		ft_print_putnbr_base(nbr, base, base_len);
+		ft_print_putnbr_base((long)nbr, base, base_len);
 }
