@@ -6,7 +6,7 @@
 /*   By: alejhern <alejhern@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 11:03:29 by alejhern          #+#    #+#             */
-/*   Updated: 2024/04/04 20:13:08 by alejhern         ###   ########.fr       */
+/*   Updated: 2024/04/05 10:08:36 by alejhern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	check_base(char *base, int base_len)
 }
 
 void	ft_print_putnbr_base(long nbr, char *base, int base_len)
-{	
+{
 	if (nbr < 0)
 	{
 		ft_putchar('-');
